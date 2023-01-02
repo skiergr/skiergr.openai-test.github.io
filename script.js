@@ -28,6 +28,7 @@ async function sendQuestionToOpenAI(question) {
       'prompt': question
     })
   });
+
   const json = await response.json();
   return json['data']['answers'][0]['text'];
 }
