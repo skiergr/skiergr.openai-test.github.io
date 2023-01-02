@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  textarea {
+    width: 50%;
+    height: 150px;
+  }
+  
+  #response {
+    font-style: italic;
+  }
+  
