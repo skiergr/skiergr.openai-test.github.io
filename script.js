@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function sendQuestionToOpenAI(question) {
-  const apiKey = 'YOUR_API_KEY';
+  const apiKey = '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';
   const endpoint = 'https://api.openai.com/v1/questions';
 
   const response = await fetch(endpoint, {
