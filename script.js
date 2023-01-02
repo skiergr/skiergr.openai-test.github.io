@@ -27,6 +27,7 @@ async function sendQuestionToOpenAI(question) {
       'model': 'text-davinci-002',
       'prompt': question
     })
+    
   });
 
   const json = await response.json();
