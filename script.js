@@ -14,22 +14,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function sendQuestionToOpenAI(question) {
-  const apiKey = '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';
-  const endpoint =
-    'https://api.allorigins.win/raw?url=https://api.openai.com/v1/questions';
-
-  const response = await fetch(endpoint, {
+  const response = await fetch('https://api.openai.com/v1/text-davinci/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
+      'Authorization': 'Bearer  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'
     },
     body: JSON.stringify({
-      model: 'text-davinci-002',
-      prompt: question,
-    }),
+      'text': question
+    })
   });
-
-  const json = await response.json();
-  return json['data']['answers'][0]['text'];
+  const data = await response.json();
+  return data.text;
 }
