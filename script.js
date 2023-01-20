@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function sendQuestionToOpenAI(question) {
-  const apiKey = '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';
+  const apiKey = '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';
   const endpoint = 'https://api.openai.com/v1/completions';
 
   const response = await fetch(endpoint, {
@@ -24,12 +24,13 @@ async function sendQuestionToOpenAI(question) {
       'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      "model": "text-davinci-003",
-        "prompt": question,
-        "max_tokens": 64,
-        "temperature": 0.5
-    })
+  "model": "text-davinci-003",
+  "prompt": "question",
+  "max_tokens": 64,
+  "temperature": 0.5
+})
   });
   const json = await response.json();
-  return json['data']['answers'][0]['text'];
+  console.log(json);
+  return json.data.choices[0];
 }
